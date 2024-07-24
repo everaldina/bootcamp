@@ -10,12 +10,13 @@ import bootcamp.model.Mentoria;
 
 public class App {
 
-    public static void printDevInf(Dev dev) {
-        System.out.println("\nDev: " + dev.getNome());
-        dev.printConteudosConcluidos();
-        dev.printConteudosInscritos();
-        dev.calcularTotalXp();
-
+    public static void printDevInf(Dev [] devs) {
+        for (Dev dev : devs) {
+            System.out.println("\nDev: " + dev.getNome());
+            dev.printConteudosConcluidos();
+            dev.printConteudosInscritos();
+            dev.calcularTotalXp();
+        }
     }
 
     public static void main(String[] args) throws Exception {
@@ -52,10 +53,10 @@ public class App {
         Dev dev2 = new Dev("Maria");
         Dev dev3 = new Dev("João");
 
+        Dev [] devs = {dev1, dev2, dev3};
+
         // listar xp e conteudos inscritos
-        printDevInf(dev1);
-        printDevInf(dev2);
-        printDevInf(dev3);
+        printDevInf(devs);
 
         // inscrever devs no bootcamp
         dev1.inscreverBootcamp(bootcamp);
@@ -64,9 +65,7 @@ public class App {
 
 
         // listar xp e conteudos inscritos
-        printDevInf(dev1);
-        printDevInf(dev2);
-        printDevInf(dev3);
+        printDevInf(devs);
 
 
         // progredir devs
@@ -78,9 +77,7 @@ public class App {
         dev3.progredir();
 
         // listar xp e conteudos inscritos
-        printDevInf(dev1);
-        printDevInf(dev2);
-        printDevInf(dev3);
+        printDevInf(devs);
         
 
 
