@@ -23,6 +23,14 @@ public class Bootcamp {
         this.devsInscritos = new HashSet<>();
     }
 
+    public void adicionarConteudo(Conteudo conteudo){
+        this.conteudos.add(conteudo);
+    }
+
+    public void inscrever(Dev dev){
+        this.devsInscritos.add(dev);
+    }
+
 
     public String getNome() {
         return nome;
