@@ -1,25 +1,28 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
+import bootcamp.model.Conteudo;
 import bootcamp.model.Curso;
 import bootcamp.model.Mentoria;
 
 public class App {
     public static void main(String[] args) throws Exception {
         // criando cursos
-        Curso curso1 = new Curso("Java", "Curso de Java", 40);
-        Curso curso2 = new Curso("Python", "Curso de Python", 50);
+        List<Conteudo> conteudo = new ArrayList<>();
 
-        // exibindo os cursos
-        System.out.println(curso1);
-        System.out.println(curso2);
-
+        // criando cursos
+        conteudo.add(new Curso("Java", "Curso de Java", 40));
+        conteudo.add(new Curso("Python", "Curso de Python", 50));
 
         // criando mentorias
-        Mentoria mentoria1 = new Mentoria("Java", "Mentoria de Java", LocalDate.now());
-        Mentoria mentoria2 = new Mentoria("Python", "Mentoria de Python", LocalDate.now());
+        conteudo.add(new Mentoria("Mentoria de Java", "Mentoria de Java", LocalDate.now()));
+        conteudo.add(new Mentoria("Mentoria de Python", "Mentoria de Python", LocalDate.now()));
 
-        // exibindo as mentorias
-        System.out.println(mentoria1);
-        System.out.println(mentoria2);
+        // exibindo cursos e mentorias
+        for (Conteudo c : conteudo) {
+            System.out.println(c);
+            System.out.println("- XP: " + c.calcularXp());
+        }
     }
 }
