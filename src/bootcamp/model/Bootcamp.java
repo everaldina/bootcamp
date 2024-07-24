@@ -27,10 +27,16 @@ public class Bootcamp {
         this.conteudos.add(conteudo);
     }
 
-    public void inscrever(Dev dev){
+    void inscreverDev(Dev dev){
         this.devsInscritos.add(dev);
     }
 
+
+    public void printConteudos(){
+        for (Conteudo conteudo : conteudos) {
+            System.out.println(conteudo);
+        }
+    }
 
     public String getNome() {
         return nome;

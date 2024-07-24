@@ -18,7 +18,7 @@ public class Dev {
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
-        bootcamp.inscrever(this);
+        bootcamp.inscreverDev(this);
     }
 
 
@@ -36,10 +36,25 @@ public class Dev {
         
     }
 
+    public void printConteudosInscritos() {
+        System.out.println("Conteúdos inscritos: ");
+        for (Conteudo conteudo : conteudosInscritos) {
+            System.out.println(conteudo);
+        }
+    }
+
+    public void printConteudosConcluidos() {
+        System.out.println("Conteúdos concluídos: ");
+        for (Conteudo conteudo : conteudosConcluidos) {
+            System.out.println(conteudo);
+        }
+    }
+
     public void calcularTotalXp(){
         double totalXp = this.conteudosConcluidos.stream()
                         .map(Conteudo::calcularXp)
                         .reduce(0d, Double::sum);
+        System.out.println("Total XP: " + totalXp);
         
     }
 
