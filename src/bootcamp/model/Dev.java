@@ -5,7 +5,7 @@ import java.util.List;
 public class Dev {
     private String nome;
     private List<Mentoria> mentorias;
-    private List<Atividade> atividades;
+    private List<Curso> atividades;
 
 
     public void inscreverBootcamp(Bootcamp bootcamp) {
