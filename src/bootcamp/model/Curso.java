@@ -2,10 +2,10 @@ package bootcamp.model;
 
 import java.time.LocalDate;
 
-public class Atividade {
+public class Curso {
     private String titulo;
     private String descricao;
-    private LocalDate data;
+    private int cargaHoraria;
 
 
     public double calcularXp() {
